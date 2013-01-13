@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
+<?xml-stylesheet type="text/css"
+  href="chrome://homerjvoddownload/skin/browserOverlay.css" ?>
+
+<!DOCTYPE overlay SYSTEM
+  "chrome://homerjvoddownload/locale/browserOverlay.dtd">
+
+<overlay id="homerjvoddownload-browser-overlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript"
+    src="chrome://homerjvoddownload/content/browserOverlay.js" />
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="homerjvoddownload-string-bundle"
+      src="chrome://homerjvoddownload/locale/browserOverlay.properties" />
+  </stringbundleset>
+<!--
+  <menupopup id="menu_ToolsPopup">
+    <menu id="homerjvoddownload-hello-menu" label="&homerjvoddownload.hello.label;"
+      accesskey="&homerjvoddownload.helloMenu.accesskey;"
+      insertbefore="devToolsEndSeparator">
+      <menupopup>
+        <menuitem id="homerjvoddownload-hello-menu-item"
+          label="&homerjvoddownload.hello.label;"
+          accesskey="&homerjvoddownload.helloItem.accesskey;"
+          oncommand="XULSchoolChrome.BrowserOverlay.sayHello(event);" />
+      </menupopup>
+    </menu>
+  </menupopup>
+
+  <vbox id="appmenuSecondaryPane">
+    <menu id="homerjvoddownload-hello-menu-2" label="&homerjvoddownload.hello.label;"
+      accesskey="&homerjvoddownload.helloMenu.accesskey;"
+      insertafter="appmenu_addons">
+      <menupopup>
+        <menuitem id="homerjvoddownload-hello-menu-item-2"
+          label="&homerjvoddownload.hello.label;"
+          accesskey="&homerjvoddownload.helloItem.accesskey;"
+          oncommand="XULSchoolChrome.BrowserOverlay.sayHello(event);" />
+      </menupopup>
+    </menu>
+  </vbox>
+  -->
+</overlay>
