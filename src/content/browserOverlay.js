@@ -52,9 +52,8 @@ var HomerjVODDownload = {
 	
 	extractURL: function(doc) {
 		// 2. param: server, 3. param: file
-		VOD_PATTERN = /pseudo_VodPlayer\([^,]*,([^,]*),([^,]*),[^,]*,[^,]*,[^,]*/g;
+		VOD_PATTERN = /pseudo_VodPlayer\([^,]*,([^,]*),[^,]*,[^,]*,[^,]*,[^,]*/g;
 		PARAM_PATTERN = /'([^']*)'/g;
-		PARAM_PATTERN2 = /'([^']*)'/g;
 		
 		var url = "";
 		var text = doc.body.innerHTML;
@@ -66,29 +65,22 @@ var HomerjVODDownload = {
 					"Homerj VOD Downloader: Param pattern did not match site content, although there seems to be a vod in here. Maybe the techlab changed the site structure.");
 				return "";
 			}
-			url = "http://" + HomerjVODDownload.base64_decode(RegExp.$1);
-			if(null == PARAM_PATTERN2.test(paramFile)) {
-				HomerjVODDownload.consoleService.logStringMessage(
-					"Homerj VOD Downloader: Param pattern did not match site content, although there seems to be a vod in here. Maybe the techlab changed the site structure.");
-				return "";
-			}
-			url = url + "/" + HomerjVODDownload.base64_decode(RegExp.$1);
-			
+			url = HomerjVODDownload.base64_decode(RegExp.$1);
 		}
 		else {
 			HomerjVODDownload.consoleService.logStringMessage(
 				"Homerj VOD Downloader: Vod pattern did not match site content, although there seems to be a vod in here. Maybe the techlab changed the site structure.");
 			return "";
-		}/*
+		}
 		if(url.search(/http/g) < 0) {
 			HomerjVODDownload.consoleService.logStringMessage(
 				"Homerj VOD Downloader: Found object '"+url+"' doesn't seem to be a vod url, although there seems to be a vod in here. Maybe the techlab changed the site structure.");
 			return "";
 		}
-		else {*/
+		else {
 			HomerjVODDownload.consoleService.logStringMessage(
 				"Homerj VOD Downloader: Retrieved vod url: " + url);
-		/*}*/
+		}
 		return url;
 	},
 	
